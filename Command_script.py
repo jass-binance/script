@@ -25,7 +25,7 @@ def access(dir_name):
                 # If the entry is a Directory, Iterate thorough sub-directory using recursion.
                 print(r"{}{}".format("It is a directory | ", each_entry.name))
                 access(each_entry)
-            else:
+            elif each_entry.is_file():
                 # Variable to store the formatted date of the file
                 file_modified_date = datetime.fromtimestamp(each_entry.stat().st_mtime).strftime(datetime_format)
                 filename_dic[each_entry.path] = file_modified_date
